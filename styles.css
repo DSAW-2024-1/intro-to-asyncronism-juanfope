@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Simpsonfont';
+    src: url('./Simpsonfont.ttf') format('truetype');
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #699df0;   
+    font-family: 'Simpsonfont', sans-serif;
+    width: 100vw;
+    height: auto;
+    & .title{
+        color: #f8db27;
+    }
+    & .more{
+        border-radius: 10px;
+    }
+    & .character{
+        background-color: #ffffff;
+        width: auto;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px;
+    }
+}
