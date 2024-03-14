@@ -2,6 +2,9 @@
 # Desarrollo de Aplicaciones Web
 ## Introducción al Asíncronismo
 
+## Nombre
+- Juan Jose Forero Peña
+- Codigo: 274336
 
 ## Funcionalidades
 
