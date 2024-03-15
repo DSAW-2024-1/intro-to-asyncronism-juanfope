@@ -13,11 +13,16 @@ body{
     height: auto;
     & .title{
         color: #f8db27;
+        font-size: 63px;
     }
     & .more{
         border-radius: 10px;
     }
     & .character{
+        display: grid;
+        max-width: 80%;
+        font-size: 10px;
+        flex-direction: row;
         background-color: #ffffff;
         width: auto;
         padding: 10px;
