@@ -30,9 +30,13 @@ function fetchNewCharacter() {
     fetchQuote();
 }
 
-// Agregar un event listener al botón para cargar un nuevo personaje al hacer clic
-moreButton.addEventListener('click', fetchNewCharacter);
+function simpsons(){
+    for(let i=0; i<8; i++){
+        fetchQuote();
+    }
+}
 
-// Llamar a la función para obtener una cita al cargar la página
+moreButton.addEventListener('click', fetchNewCharacter);
 fetchQuote();
+simpsons ();
 
