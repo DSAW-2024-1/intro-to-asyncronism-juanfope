@@ -6,6 +6,10 @@
 - Juan Jose Forero Peña
 - Codigo: 274336
 
+## Despliegue Github pages
+
+- Link: https://dsaw-2024-1.github.io/intro-to-asyncronism-juanfope/
+
 ## Funcionalidades
 
 - Crear una aplicación web que se comunique con la API propuesta: https://thesimpsonsquoteapi.glitch.me/
