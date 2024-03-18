@@ -1,38 +1,40 @@
 const quoteContainer = document.getElementById('quote-container');
 const moreButton = document.getElementById('more');
 const characterFilterInput = document.getElementById('character-filter');
-let shown = [];
+let shownCharacters = new Set();
 
 function fetchQuotes(characterName = '') {
     let apiUrl = 'https://thesimpsonsquoteapi.glitch.me/quotes?count=8';
     if (characterName !== '') {
         apiUrl += `&character=${encodeURIComponent(characterName)}`;
+        shownCharacters.clear();
     }
 
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             quoteContainer.innerHTML = '';
+
             data.forEach(quoteData => {
                 const { quote, character, image } = quoteData;
 
-                if(!shown.includes(character)){
-                    shown.push(character);
+                if (!shownCharacters.has(character)) {
+                    const quoteElement = document.createElement('div');
+                    quoteElement.classList.add('quote');
 
-                const quoteElement = document.createElement('div');
-                quoteElement.classList.add('quote');
+                    const characterImage = document.createElement('img');
+                    characterImage.src = image;
+                    characterImage.alt = character;
 
-                const characterImage = document.createElement('img');
-                characterImage.src = image;
-                characterImage.alt = character;
+                    const quoteText = document.createElement('p');
+                    quoteText.textContent = `"${quote}" - ${character}`;
 
-                const quoteText = document.createElement('p');
-                quoteText.textContent = `"${quote}" - ${character}`;
+                    quoteElement.appendChild(characterImage);
+                    quoteElement.appendChild(quoteText);
 
-                quoteElement.appendChild(characterImage);
-                quoteElement.appendChild(quoteText);
+                    quoteContainer.appendChild(quoteElement);
 
-                quoteContainer.appendChild(quoteElement);
+                    shownCharacters.add(character);
                 }
             });
         })
@@ -44,7 +46,7 @@ function handleFilterChange() {
     fetchQuotes(characterName);
 }
 
-moreButton.addEventListener('click', fetchQuotes);
+moreButton.addEventListener('click', () => fetchQuotes(characterFilterInput.value.trim()));
 characterFilterInput.addEventListener('input', handleFilterChange);
 
 fetchQuotes();

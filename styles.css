@@ -7,7 +7,8 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: #699df0;   
+    /*background: #699df0;*/
+    background-image: url(./Assets/ad1e2c0c93696b30a9a6c916cb73d4b7.jpg);   
     font-family: 'Simpsonfont', sans-serif;
     width: 100vw;
     height: auto;
@@ -23,7 +24,7 @@ body{
         max-width: 80%;
         font-size: 10px;
         flex-direction: row;
-        background-color: #ffffff;
+       /*background-color: #ffffff;*/
         width: auto;
         padding: 10px;
         border-radius: 10px;
